@@ -13,7 +13,7 @@ public class consultasProducto extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
         
-        String sqlInsert = "INSERT INTO producto (codigo,nombre,precio,cantidad)"
+        String sqlInsert = "INSERT INTO productos (codigo,nombre,precio,cantidad)"
                 + "VALUES"
                 + "(?,?,?,?)";
         try {
@@ -40,7 +40,7 @@ public class consultasProducto extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
         
-        String sqlInsert = "UPDATE producto SET codigo=?,nombre=?,precio=?,cantidad=? WHERE id=?";
+        String sqlInsert = "UPDATE productos SET codigo=?,nombre=?,precio=?,cantidad=? WHERE id=?";
         try {
             ps = con.prepareStatement(sqlInsert);
             ps.setString(1, pro.getCodigo());
@@ -66,7 +66,7 @@ public class consultasProducto extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
         
-        String sqlInsert = "DELETE FROM producto WHERE id=?";
+        String sqlInsert = "DELETE FROM productos WHERE id=?";
         try {
             ps = con.prepareStatement(sqlInsert);
             ps.setInt(1, pro.getId());
@@ -89,7 +89,7 @@ public class consultasProducto extends Conexion {
         ResultSet rs = null;
         Connection con = getConexion();
         
-        String sqlInsert = "SELECT * FROM producto WHERE codigo=?";
+        String sqlInsert = "SELECT * FROM productos WHERE codigo=?";
         try {
             ps = con.prepareStatement(sqlInsert);
             ps.setString(1, pro.getCodigo());
@@ -122,7 +122,7 @@ public class consultasProducto extends Conexion {
         ResultSet rs = null;
         Connection con = getConexion();
         
-        String sqlSelect = "SELECT * FROM producto";
+        String sqlSelect = "SELECT * FROM productos";
         try {
             ps = con.prepareStatement(sqlSelect);
             rs = ps.executeQuery();
@@ -138,7 +138,6 @@ public class consultasProducto extends Conexion {
             System.out.println("termino metodo leer");
             return false;
         } catch (SQLException e) {
-            System.out.println("error en leer "+e);
             System.err.println("error en leer "+e);
             return false;
         }finally{

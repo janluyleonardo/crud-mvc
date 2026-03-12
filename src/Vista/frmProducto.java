@@ -93,10 +93,10 @@ public class frmProducto extends javax.swing.JFrame {
 
         jtProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {}
+
             },
             new String [] {
-
+                "id producto", "Código", "Nombre", "Precio", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(jtProducto);

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-    private final String base = "tiendita_veci";
+    private final String base = "tienda";
     private final String url = "jdbc:mysql://127.0.0.1/" + base+"?characterEncoding=latin1";
     private final String user = "MORJANDEV";
     private final String pass = "Morjan*1025544889";
